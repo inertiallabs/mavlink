@@ -4267,6 +4267,12 @@
       <entry value="3" name="STOP_VG3D_CALIBRATION_IN_FLIGHT">
         <description>Stop on-the-fly VG3D calibration</description>
       </entry>
+      <entry value="4" name="START">
+        <description>Start sensor</description>
+      </entry>
+      <entry value="5" name="STOP">
+        <description>Stop sensor</description>
+      </entry>
     </enum>
   </enums>
   <messages>
