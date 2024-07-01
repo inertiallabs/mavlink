@@ -1106,7 +1106,7 @@
       <entry value="8" name="EAHRS_ADU_DIFFERENTIAL_PRESSURE_SENSOR_STATUS">
         <description>0 - no fails. 1 - failure detected.</description>
       </entry>
-      <entry value="16" name="EAHRS_DIFFERENTIAL_PRESSURE_SENSOR">
+      <entry value="16" name="EAHRS_ADU_STATIC_PRESSURE_MEASUREMENT">
         <description>0 - no fails. 1 - failure detected.</description>
       </entry>
       <entry value="32" name="EAHRS_ADU_DIFFERENTIAL_PRESSURE_MEASUREMENT">
