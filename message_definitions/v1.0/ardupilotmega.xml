@@ -1131,6 +1131,36 @@
         <description>0 - ok. 1 - out of range.</description>
       </entry>
     </enum>
+    <!-- ILABS_EAHRS_GPS_FIX_STATUS - these values for the GNSS extended info in UDD package -->
+    <enum name="ILABS_EAHRS_GPS_FIX_STATUS">
+      <entry value="0" name="NO">
+        <description>No fix.</description>
+      </entry>
+      <entry value="1" name="FIX_2D">
+        <description>2D fix.</description>
+      </entry>
+      <entry value="2" name="FIX_3D">
+        <description>3D fix.</description>
+      </entry>
+      <entry value="3" name="OTHER">
+        <description>Other fix.</description>
+      </entry>
+    </enum>
+    <!-- ILABS_EAHRS_GPS_SPOOFING_DETECT_STATUS - these values for the GNSS extended info in UDD package -->
+    <enum name="ILABS_EAHRS_GPS_SPOOFING_INDICATED_STATUS">
+      <entry value="0" name="UNKNOWN_OR_DEACTIVATED">
+        <description>Unknown or deactivated spoofing.</description>
+      </entry>
+      <entry value="1" name="NO_INDICATED">
+        <description>No spoofing indicated.</description>
+      </entry>
+      <entry value="2" name="INDICATED">
+        <description>Spoofing indicated.</description>
+      </entry>
+      <entry value="3" name="MULTIPLE_INDICATIONS">
+        <description>Multiple spoofing indicated.</description>
+      </entry>
+    </enum>
     <enum name="PID_TUNING_AXIS">
       <entry value="1" name="PID_TUNING_ROLL"/>
       <entry value="2" name="PID_TUNING_PITCH"/>
