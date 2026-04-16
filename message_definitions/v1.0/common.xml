@@ -217,9 +217,9 @@
     </enum>
     <enum name="MAV_FRAME">
       <description>Co-ordinate frames used by MAVLink. Not all frames are supported by all commands, messages, or vehicles.
-      
+
       Global frames use the following naming conventions:
-      - "GLOBAL": Global co-ordinate frame with WGS84 latitude/longitude and altitude positive over mean sea level (MSL) by default. 
+      - "GLOBAL": Global co-ordinate frame with WGS84 latitude/longitude and altitude positive over mean sea level (MSL) by default.
         The following modifiers may be used with "GLOBAL":
         - "RELATIVE_ALT": Altitude is relative to the vehicle home position rather than MSL.
         - "TERRAIN_ALT": Altitude is relative to ground level rather than MSL.
@@ -6682,6 +6682,26 @@
       <field type="uint16_t" name="status3" display="bitmask">Status flags3.</field>
       <field type="uint16_t" name="status4" display="bitmask">Status flags4.</field>
       <field type="uint16_t" name="status5" display="bitmask">Status flags5.</field>
+    </message>
+    <message id="750" name="EXTERNAL_AHRS_GPS_RAW_INT">
+      <description>Raw GNSS data from the receiver integrated into the INS.</description>
+      <field type="uint64_t" name="time_usec" units="us">The time of the last fix in system milliseconds. This is used for calculation how far we might have moved since that fix.</field>
+      <field type="uint8_t" name="fix_type" enum="GPS_FIX_TYPE">GPS fix type.</field>
+      <field type="int32_t" name="lat" units="degE7">Latitude (WGS84, EGM96 ellipsoid)</field>
+      <field type="int32_t" name="lon" units="degE7">Longitude (WGS84, EGM96 ellipsoid)</field>
+      <field type="int32_t" name="alt" units="mm">The GNSS vertical datum used in this field (MSL or WGS84 ellipsoid) depends on the EAHRS configuration</field>
+      <field type="uint16_t" name="eph">GPS HDOP horizontal dilution of position (unitless). If unknown, set to: UINT16_MAX</field>
+      <field type="uint16_t" name="epv">GPS VDOP vertical dilution of position (unitless). If unknown, set to: UINT16_MAX</field>
+      <field type="uint16_t" name="vel" units="cm/s">GPS ground speed. If unknown, set to: UINT16_MAX</field>
+      <field type="uint16_t" name="cog" units="cdeg">Course over ground (NOT heading, but direction of movement) in degrees * 100, 0.0..359.99 degrees. If unknown, set to: UINT16_MAX</field>
+      <field type="uint8_t" name="satellites_visible">Number of satellites visible. If unknown, set to 255</field>
+      <extensions/>
+      <field type="int32_t" name="alt_ellipsoid" units="mm">Altitude (above WGS84, EGM96 ellipsoid). Positive for up.</field>
+      <field type="uint32_t" name="h_acc" units="mm">Position uncertainty.</field>
+      <field type="uint32_t" name="v_acc" units="mm">Altitude uncertainty.</field>
+      <field type="uint32_t" name="vel_acc" units="mm">Speed uncertainty.</field>
+      <field type="uint32_t" name="hdg_acc" units="degE5">Heading / track uncertainty</field>
+      <field type="uint16_t" name="yaw" units="cdeg">Yaw in earth frame from north. Use 0 if this GPS does not provide yaw. Use 65535 if this GPS is configured to provide yaw and is currently unable to provide it. Use 36000 for north.</field>
     </message>
     <!-- Rover specific messages -->
     <message id="9000" name="WHEEL_DISTANCE">
